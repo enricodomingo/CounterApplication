@@ -1,0 +1,16 @@
+﻿@model CounterModel
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+
+<div> @Model.Counter </div>
+@using (Html.BeginForm("Index", "Home", new { id = @Model.Id }))
+{
+    @Html.HiddenFor(m => m.Id)
+<form asp-action="Index" method="post" role="form">
+    <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Confirm</button>
+    </div>
+</form>
+}
